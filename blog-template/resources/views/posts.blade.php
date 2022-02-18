@@ -8,6 +8,6 @@
             @endif
         </main>
     <x-footer-scripts>
-        <script src="/home.js"></script>
+        <script src="/home.min.js"></script>
     </x-footer-scripts>
 </x-layout>

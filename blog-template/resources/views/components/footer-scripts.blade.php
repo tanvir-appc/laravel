@@ -1,2 +1,2 @@
-<script src="/main.js"></script>
+<script src="/main.min.js"></script>
 {{ $slot }}

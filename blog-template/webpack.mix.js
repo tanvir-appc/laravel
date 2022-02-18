@@ -1,4 +1,6 @@
 const mix = require('laravel-mix');
+require('laravel-mix-purgecss');
+// import mix from 'laravel-mix';
 
 /*
  |--------------------------------------------------------------------------
@@ -14,4 +16,16 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
         //
-    ]);
+    ])
+ //    .options({
+ //         postCss: [require('tailwindcss')]
+	// })
+	.purgeCss();
+// mix.styles([
+// 	'public/scss/tailwind.min.css',
+//     'public/scss/main.scss',
+// ], 'public/css/all.min.css').purgeCss();
+// mix.scripts([
+//     'public/main.js',
+//     'public/home.js'
+// ], 'public/js/all.min.js').version();;

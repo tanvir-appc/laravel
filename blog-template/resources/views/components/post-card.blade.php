@@ -3,7 +3,7 @@
                     <div class="py-6 px-5">
                         <div>
                             {{-- TODO --}}
-                            <img src="/images/illustration-1.png" alt="Blog Post illustration" class="rounded-xl">
+                            <img src="/images/webp/illustration-1.webp" alt="Blog Post illustration" class="rounded-xl" width="1108px" height="4px">
                         </div>
 
                         <div class="mt-8 flex flex-col justify-between">
@@ -31,7 +31,7 @@
 
                             <footer class="flex justify-between items-center mt-8">
                                 <div class="flex items-center text-sm">
-                                    <img src="/images/lary-avatar.svg" alt="Lary avatar">
+                                    <img src="/images/webp/lary-avatar.svg" alt="Lary avatar" width="56px" height="4px">
                                     <div class="ml-3">
                                        <a href="/authors/{{$post->author->
                                         username}}"><h5 class="font-bold">{{$post->author->name}}</h5></a>

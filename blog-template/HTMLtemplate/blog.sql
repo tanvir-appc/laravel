@@ -4,7 +4,7 @@
 -- https://tableplus.com/
 --
 -- Database: blog
--- Generation Time: 2022-02-10 00:19:16.1960
+-- Generation Time: 2022-02-10 23:36:56.3440
 -- -------------------------------------------------------------
 
 
@@ -25,7 +25,7 @@ CREATE TABLE `categories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `failed_jobs` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -81,7 +81,7 @@ CREATE TABLE `posts` (
   `published_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `posts_slug_unique` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `users` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
@@ -99,11 +99,12 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `categories` (`id`, `name`, `slug`, `created_at`, `updated_at`) VALUES
-(1, 'fuga', 'soluta-consequuntur-placeat-sint-omnis-et', '2022-02-09 18:16:19', '2022-02-09 18:16:19'),
-(2, 'tenetur', 'omnis-cumque-corrupti-eaque-magni-animi', '2022-02-09 18:16:19', '2022-02-09 18:16:19'),
-(3, 'ratione', 'provident-totam-labore-autem-officiis-et', '2022-02-09 18:16:19', '2022-02-09 18:16:19'),
-(4, 'sed', 'reiciendis-id-perferendis-id', '2022-02-09 18:16:19', '2022-02-09 18:16:19'),
-(5, 'quis', 'odit-non-laboriosam-aliquam-eos-molestiae-labore-iusto', '2022-02-09 18:16:19', '2022-02-09 18:16:19');
+(1, 'tempora', 'culpa-non-dolor-provident-rerum', '2022-02-10 15:28:38', '2022-02-10 15:28:38'),
+(2, 'quisquam', 'ut-voluptatem-quis-odit-debitis', '2022-02-10 15:28:38', '2022-02-10 15:28:38'),
+(3, 'autem', 'rerum-et-ut-est-iure', '2022-02-10 15:28:38', '2022-02-10 15:28:38'),
+(4, 'velit', 'et-minima-dolores-quod', '2022-02-10 15:28:38', '2022-02-10 15:28:38'),
+(5, 'aperiam', 'sunt-non-enim-non-eligendi', '2022-02-10 15:28:38', '2022-02-10 15:28:38'),
+(6, 'tempora', 'qui-officia-quis-dolor-tempore-quia-et-et', '2022-02-10 15:28:38', '2022-02-10 15:28:38');
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (1, '2014_10_12_000000_create_users_table', 1),
@@ -114,14 +115,15 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (6, '2022_02_09_162436_create_categories_table', 1);
 
 INSERT INTO `posts` (`id`, `user_id`, `category_id`, `title`, `slug`, `excerpt`, `body`, `created_at`, `updated_at`, `published_at`) VALUES
-(1, 1, 1, 'Velit quia necessitatibus et quibusdam.', 'ratione-odit-aut-quaerat-eveniet-magnam', 'Enim quia voluptatem consectetur assumenda laboriosam.', '<p>Explicabo expedita ipsa tempore similique veniam non voluptas in. Velit omnis et aut cumque facilis sed odio consectetur. Cumque et omnis ut fuga perferendis dolorem. Eum sit exercitationem totam dolores voluptatem.</p>', '2022-02-09 18:16:19', '2022-02-09 18:16:19', '2022-02-09 18:16:19'),
-(2, 1, 2, 'Numquam dolore maxime et ratione iusto et.', 'impedit-necessitatibus-autem-nam-aut-repellendus-aspernatur-expedita-aspernatur', 'Porro provident nihil facere fugit ex et.', '<p>Dolorum dolores facilis consequatur incidunt exercitationem hic rem. Ratione velit consequuntur qui sed architecto optio. Laborum facere saepe error cumque quos eum voluptate. Architecto accusantium ut et magnam.</p>', '2022-02-09 18:16:19', '2022-02-09 18:16:19', '2022-02-09 18:16:19'),
-(3, 1, 3, 'Velit vero sint ipsam in iure.', 'enim-laboriosam-hic-suscipit-laudantium-numquam-earum-pariatur-consequatur', 'Suscipit sed praesentium temporibus necessitatibus.', '<p>Praesentium veniam at minima rerum labore labore omnis nostrum. Optio blanditiis ut doloremque numquam quis.</p>', '2022-02-09 18:16:19', '2022-02-09 18:16:19', '2022-02-09 18:16:19'),
-(4, 1, 4, 'Amet ut reprehenderit quis repellat rem et.', 'sint-iusto-hic-vero-recusandae', 'Autem blanditiis aut culpa sapiente blanditiis amet.', '<p>At velit quasi consequatur exercitationem. Nostrum harum voluptatem non fuga neque provident. Officiis a maxime consectetur et et odit.</p>', '2022-02-09 18:16:19', '2022-02-09 18:16:19', '2022-02-09 18:16:19'),
-(5, 1, 5, 'Laboriosam qui laudantium omnis pariatur laudantium labore.', 'nulla-sint-fugit-quia-laboriosam', 'Optio nam modi qui voluptatum.', '<p>Molestias est rerum doloribus at accusamus ut aut. Molestias sequi provident consequatur distinctio praesentium cum. Occaecati aut placeat mollitia perferendis neque.</p>', '2022-02-09 18:16:19', '2022-02-09 18:16:19', '2022-02-09 18:16:19');
+(1, 1, 1, 'Non voluptates sed minima fugiat voluptates.', 'non-tempora-facere-dolorum-repudiandae-molestiae', 'Nihil modi eaque perferendis et error odio voluptas.', '<p>Explicabo aut laboriosam earum ratione ut. Qui animi officiis et maxime et similique. Quisquam placeat dolor et debitis dolorum aliquam.</p>', '2022-02-10 15:28:38', '2022-02-10 15:28:38', '2022-02-10 15:28:38'),
+(2, 1, 2, 'Esse laborum occaecati architecto rerum omnis adipisci dolores consequatur.', 'nulla-rem-inventore-praesentium-et', 'Delectus dolores et sed quam impedit.', '<p>Ut et aut repellat quia. Quos quis suscipit fugit qui.</p>', '2022-02-10 15:28:38', '2022-02-10 15:28:38', '2022-02-10 15:28:38'),
+(3, 1, 3, 'Sint voluptate aut quasi eveniet error.', 'sed-ad-voluptatem-sint-asperiores-nihil-dolor', 'Esse et voluptatem aperiam sit quia est.', '<p>Laboriosam minima dolor labore eius consequuntur. Accusamus nihil autem veritatis ut et sint omnis aut. Est illum mollitia iusto saepe quasi. Consequatur pariatur dolorem voluptatibus sequi aspernatur eaque in.</p>', '2022-02-10 15:28:38', '2022-02-10 15:28:38', '2022-02-10 15:28:38'),
+(4, 1, 4, 'Minima voluptatem nulla expedita consectetur quaerat.', 'nesciunt-impedit-minima-quo-ut-voluptatem-molestias', 'Corrupti ut nesciunt dolores et impedit.', '<p>Ex molestias deserunt saepe ut voluptatem. Voluptas ab aperiam ut id et dignissimos nisi earum. Voluptatem asperiores nam quae debitis qui.</p>', '2022-02-10 15:28:38', '2022-02-10 15:28:38', '2022-02-10 15:28:38'),
+(5, 1, 5, 'Soluta non quia sed incidunt ea quas odio quis.', 'dolorum-provident-aliquam-consequatur-tempora-quia-distinctio-eos-eos', 'Exercitationem ut perspiciatis quia voluptatum vero.', '<p>Autem quam doloremque accusantium maiores quasi ipsa molestiae. Distinctio fugit eum voluptatem quam sit quia aliquam. Illum unde culpa ipsum consequatur quasi aperiam ratione.</p>', '2022-02-10 15:28:38', '2022-02-10 15:28:38', '2022-02-10 15:28:38'),
+(6, 1, 6, 'Ab odit sed qui possimus.', 'voluptas-et-adipisci-natus-placeat-facilis-nam', 'Consequuntur sint aspernatur cum minus ducimus.', '<p>Accusamus atque quia similique rerum fuga. Magni esse et quo dolor in repellat. Sint iure hic amet fugit et. Nesciunt libero illum dignissimos commodi nihil architecto perspiciatis quia.</p>', '2022-02-10 15:28:38', '2022-02-10 15:28:38', '2022-02-10 15:28:38');
 
 INSERT INTO `users` (`id`, `username`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'aubrey.bernhard', 'Jone Doe', 'qhalvorson@example.com', '2022-02-09 18:16:19', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'TKRLRvMgF1', '2022-02-09 18:16:19', '2022-02-09 18:16:19');
+(1, 'rconroy', 'Jone Doe', 'jarod.muller@example.org', '2022-02-10 15:28:38', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 'xdm9uHPQeV', '2022-02-10 15:28:38', '2022-02-10 15:28:38');
 
 
 

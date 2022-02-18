@@ -3,8 +3,8 @@
                 Latest <span class="text-blue-500">Laravel From Scratch</span> News
             </h1>
 
-            <h2 class="inline-flex mt-2">By Lary Laracore <img src="/images/lary-head.svg"
-                                                               alt="Head of Lary the mascot"></h2>
+            <h2 class="inline-flex mt-2">By Lary Laracore <img src="/images/webp/lary-head.svg"
+                                                               alt="Head of Lary the mascot" width="35px" height="4px"></h2>
 
             <p class="text-sm mt-14">
                 Another year. Another update. We're refreshing the popular Laravel series with new content.
