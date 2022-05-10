@@ -1,6 +1,6 @@
 <!doctype html>
 <head>
-    <title>Laravel From Scratch Blog</title>
+    <title>App Commandos Blog</title>
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">

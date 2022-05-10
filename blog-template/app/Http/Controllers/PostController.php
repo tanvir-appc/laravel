@@ -14,12 +14,29 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
+        // first messy approach
+        // $posts = Post::latest();
+        // if (request('search')) {
+        //     $posts->where('title','like','%'.request('search').'%')
+        //     ->orWhere('body','like','%'.request('search').'%');
+        // }
+        // return view('posts',[
+        //     'posts' => $posts->get(),
+        //     'categories' => Category::all(),
+        //     'currentCategory' => Category::firstWhere('slug',request('category'))
+        // ]);
+
+
+        // second filter approach
+
+        // dd(request('search'));
         // dd(Category::firstWhere('slug',request('category')));
-        return view('posts',[
-            'posts' => Post::latest()->filter(request(['search','category']))->get(),
-            'categories' => Category::all(),
-            'currentCategory' => Category::firstWhere('slug',request('category'))
+        return view('posts.index',[
+            // 'posts' => Post::latest()->filter(request(['search','category']))->get(),
+            'posts' => Post::latest()->filter(request(['search','category','author']))->get()
+            // 'categories' => Category::all(),
+            // 'currentCategory' => Category::firstWhere('slug',request('category'))
             // 'posts' => Post::latest()->without(['category','author'])->get()
         ]);
     }
@@ -43,7 +60,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        return view('post',[
+        return view('posts.show',[
             'post' => $post
         ]);
     }

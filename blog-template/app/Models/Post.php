@@ -18,22 +18,30 @@ class Post extends Model
     public function author(){
     	return $this->belongsTo(User::class,'user_id');
     }
-    public function scopeFilter($query,array $filters){
-    	$query->when(isset($filters['search'])?$filters['search']:false,function($query,$search){
-            $query->where('title','like','%'.$search.'%')
-                ->orWhere('body','like','%'.$search.'%');
-        });
-        $query->when(isset($filters['category'])?$filters['category']:false,function($query,$category){
-        	$query->whereHas('category',function($query) use ($category){
-        		$query->where('slug',$category);
-        	});
-            // $query
-            // 	->whereExists(function($query) use ($category){
-            // 		$query
-            // 			->from('categories')
-            // 			->whereColumn('categories.id','posts.category_id')
-            // 			->where('categories.slug',$category);
-            // 	});
-        });
+    public function scopeFilter($query, array $filters){
+        // filter by search
+        $query->when(
+            $filters['search'] ?? false, fn($query,$search) => 
+                $query->where(fn($query)=>
+                    $query->where('title','like','%'.$search.'%')
+                    ->orWhere('body','like','%'.$search.'%')
+        ));
+
+        // filter by category
+        $query->when(
+            $filters['category'] ?? false, fn($query,$category) => 
+                // $query
+                //     ->whereExists(fn($query) =>
+                //         $query->from('categories')
+                //             ->whereColumn('categories.id','posts.category_id')
+                //             ->where('categories.slug',$category))
+                $query->whereHas('category',fn($query) => $query->where('slug',$category))
+        );
+
+        // filter by author
+        $query->when(
+            $filters['author'] ?? false, fn($query,$author) => 
+                $query->whereHas('author',fn($query) => $query->where('username',$author))
+        );
     }
 }
